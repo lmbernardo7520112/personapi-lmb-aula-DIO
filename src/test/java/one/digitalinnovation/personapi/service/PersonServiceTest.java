@@ -34,7 +34,8 @@ public class PersonServiceTest {
         when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
 
         MessageResponseDTO expectedSuccessMessage = createExpectedMessageResponse(expectedSavedPerson.getId());
-        MessageResponseDTO succesMessage = personService.createPerson(personDTO);
+        Person person = null;
+        MessageResponseDTO succesMessage = personService.createPerson(null);
 
         assertEquals(expectedSuccessMessage, succesMessage);
     }
